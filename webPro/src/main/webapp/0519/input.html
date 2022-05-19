@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+[type="image"] {
+  width: 30px;
+}
+</style>
+<script>
+function send(){
+	//alert("까꿍");
+	//데이터 전송을 위한 코드 작성
+	var frm = document.getElementsByTagName('form')[2];
+	frm.submit();
+}
+</script>
+</head>
+<body>
+  <!-- get방식으로 데이터 전송 -->
+  <form action="test.jsp" method="get">
+    id : <input name="userId"> <br> <!-- type="text" 가 default -->
+    pw : <input type="password" name="userPw"> <br>
+    <input type="submit" value="전송하기">
+  </form>
+  
+  <hr>
+
+  <!-- post방식으로 데이터 전송 -->
+  <form action="test.jsp" method="post">
+    id : <input name="userId"> <br> <!-- type="text" 가 default -->
+    pw : <input type="password" name="userPw"> <br>
+    <input type="submit" value="전송하기">
+  </form>
+    <hr>
+  <!-- input type="button"으로 변경후 전송기능 부여하기 -->
+  <form action="test.jsp" method="post">
+    id : <input name="userId"> <br> <!-- type="text" 가 default -->
+    pw : <input type="password" name="userPw"> <br>
+    <input type="button" value="btn" onclick="send()">
+  </form>
+    <hr>
+  <!-- input type="image"으로 변경후 전송하기-->
+  <form action="test.jsp" method="post">
+    id : <input name="userId"> <br> <!-- type="text" 가 default -->
+    pw : <input type="password" name="userPw"> <br>
+    <input type="image" src="../images/img/button.png">
+    <input type ="reset" value ="reset">
+  </form>
+</body>
+</html>
