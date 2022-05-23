@@ -6,18 +6,36 @@
 <style>
 /* 요소선택자 */
  p{
- 	color:yellow;
+ 	color:gray;
  }
 /* id선택자 */
+#a {
+ 	color: red;
+ }
 /* class선택자 */
+.b{
+	color: orange;
+}
+.c{
+	border: solid violet;
+	}
 /* 전체선택자 */
+* {
+	border: dotted green;
+	}
 /* 속성선택자 */
+[title] {
+	font-style: italic;
+}
+[title="코스모스"] {
+	text-align: right;
+}
 </style>
 </head>
 <body>
-	<p title="무궁화" id="a">1</p>
-	<p title="프리지아" class="b">2</p>
-	<p title="국화" class="b">3</p>
-	<p title="코스모스" class="c">4</p>
+	<p title="무궁화" id="a">111</p>
+	<p title="프리지아" class="b">222</p>
+	<p title="국화" class="b c">333</p>
+	<p title="코스모스" class="b">444</p>
 </body>
 </html>
