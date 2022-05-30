@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/outStyle.css">
+<style>
+label{
+	display: inline-block;
+	width : 80px;
+}
+span {
+	display: inline-block;
+	background-color: yellow;
+	width: 100px;
+	height: 20px;
+/* 	border: solid red; */
+}
+</style>
+</head>
+<body>
+  <form>
+    <label for="x">첫번째 값</label>
+    <input id="x"> <br>
+    
+    <label for="y">두번째 값</label>
+    <input id="y"> <br>
+    
+    <label for="result">>결과 값</label>
+    <input id="result"> <br>
+    
+    <input type= "button" value = "+" onclick="calc('+')">
+    <input type= "button" value = "-" onclick="calc('-')">
+    <input type= "button" value = "*" onclick="calc('*')">
+    <input type= "button" value = "/" onclick="calc('/')">
+    
+    <p>
+    <label for="sp1">첫번째 값</label>
+    <span id ="sp1"></span>
+    </p>
+    <p>
+    <label for="sp2">두번째 값</label>
+    <span id ="sp2"></span>
+    </p>
+    <p>
+    <label for="sp3">결과 값</label>
+    <span id ="sp3"></span>
+    </p>
+  </form>
+ <script>
+ function calc(asdf){
+	 alert("조건으로 사용할 연산자 >>" + asdf);
+	 // 사칙연산 구현
+	 // 조건문사용해서 결과 찍어오기 숙제
+ }
+ </script>
+</body>
+</html>
