@@ -48,11 +48,57 @@ span {
     </p>
   </form>
  <script>
- function calc(asdf){
-	 alert("조건으로 사용할 연산자 >>" + asdf);
-	 // 사칙연산 구현
-	 // 조건문사용해서 결과 찍어오기 숙제
+ 
+ let xVal;
+ let yVal;
+ 
+ function calc(apple){
+	 
+	xVal = parseInt(document.getElementById("x").value);
+	yVal = parseInt(document.getElementById("y").value);
+	 
+	 console.log(typeof xVal);
+	 
+	 let result ="";
+	 // 비교연산
+	 switch(apple){
+		 case '+':
+			 //메소드호출해서 값 리턴해와서 활용
+			 result = add();
+			 break;
+		 case '-':
+			 result = sub();
+			 break;
+		 case '*':
+			 result = multi();
+			 break;
+		 case '/':
+			 result = divd();
+			 break;
+		 }
+	 document.getElementById('result').value = result;
+	 document.getElementById('sp1').innerHTML = xVal;
+	 document.getElementById('sp2').innerHTML = yVal;
+	 document.getElementById('sp3').innerHTML = result;
+	
+	 
+	 }
+ 
+ function add(){
+	 return xVal + yVal;
  }
+ function sub(){
+	 return xVal - yVal;
+ }
+ function multi(){
+	 return xVal * yVal;
+ }
+ function divd(){
+	 let rst = xVal / yVal;
+	 return rst.toFixed(2);
+ }
+ 
+	 
  </script>
 </body>
 </html>
