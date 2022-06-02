@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="./css/main.css">
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+
+</style>
+<style type="text/css">
+iframe {
+width: calc(100%);
+height: 1200px;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+<a href="main.html"><center><img alt="로고" src="./img/logo.png" height=150px width="530px"></center></a>
+
+</header>
+
+
+
+<nav>
+
+<ul class="headerUl">
+
+<li><a href="./html/home.html" target="ifr">Home</a></li>
+<li><a href="./html/new.html" target="ifr">New</a></li>
+<li><a href="javascript:alert('준비중입니다.');">News</a></li>
+<li><a href="javascript:alert('준비중입니다.');">My Account</a></li>
+<li><a href="./html/about.html">About</a></li>
+</ul>
+   
+</nav>
+
+<div class="maindiv">
+<aside class="left">
+<div class="navdiv">
+         <ul class="navUl">
+            <li class="navli"><a  href="./html/buger.html" target="ifr"><img alt="햄버거" src="./img/버거.png" height=70px width="70px">햄버거</a></li>
+            <li class="navli"><a  href="./html/drink.html" target="ifr"><img alt="드링크" src="./img/드링크.png" height=70px width="70px">드링크</a></li>
+            <li class="navli"><a  href="./html/side.html" target="ifr"><img alt="사이드" src="./img/사이드.png" height=70px width="70px">사이드</a></li>
+         </ul>
+   </div>
+</aside>
+         
+<section>
+<iframe src='./html/home.html' class="iframe" name="ifr"></iframe> </iframe>
+
+</section>
+<aside class="right">
+      <div class="shopcart">
+      <h3>
+      Shopping Cart
+      </h3>
+      <h4>
+      현재 쇼핑카트에 물품이 없습니다. 
+      </h4><br>
+      <a href="javascript:alert('준비중입니다.');">쇼핑카트 보기</a>
+      </div>
+      <div class="login">
+      <h4>Log In</h4>
+      
+      <form action="">
+      id : <input type="text" name="userId"> <br> 
+      pw : <input type="password" name="userPw"><br> 
+          <input type="submit" value="로그인">
+          <input type="submit" value="비밀번호찾기">
+          <br>
+         <a href="./html/SignUp.html"target="_self">회원가입</a>
+          
+          
+      </form>
+      </div>
+   
+   </aside>
+</div>
+<footer>
+<br>
+<center><a class=a-font>▒▒kr.or.ddit.401 이사이트는 학습용으로 제작되었습니다.▒▒</a></center><br>
+<center><img alt="로고" src="./img/brand.png" height=60% width=60%></center>
+</footer>
+</body>
+</html>

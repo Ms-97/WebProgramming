@@ -47,9 +47,16 @@
 		}
 	}
 	let selfObj = new SelfObj('이지은','29');
-	console.log(selfObj.name);
-	console.log(selfObj["age"]);
-	console.log(selfObj.hello());
+	console.log(selfObj);
+// 	consile.log(Object.key(selfObj));     //객체를 배열 형태로 바꿈
+// 	consile.log(Object.values(selfObj));  //객체를 배열 형태로 바꿈
+// 	consile.log(Object.entries(selfObj)); //객체를 배열 형태로 바꿈
+	
+	//json데이터로 변환
+	console.log(JSON.stringify(selfObj));
+
+	// console.log(selfObj['age']);
+	// console.log(selfObj.hello());
 </script>
 </body>
 </html>
