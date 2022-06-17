@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/outStyle.css">
+<style>
+img {
+  width: 150px;
+}
+[type="button"] {
+  display: none;
+}
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <img src="../images/img/img.png" alt="" src2="../images/img/뚱이웃.png"> 
+    <img src="../images/img/black.png" alt="" src2="../images/img/뚱이웃.png">
+    <img src="../images/img/뚱이햄.png" alt="" src2="../images/img/뚱이웃.png">
+    <img src="../images/img/homer.png" alt="" src2="../images/img/뚱이웃.png">
+  <br><br>
+  <input type= "button" value="보이기">
+<script>
+let v_src = '';
+$('img').on('mouseover',function(){
+	v_src = $(this).attr('src');
+	let v_src2 = $(this).attr('src2');
+	$(this).attr('src',v_src2);
+});
+
+$('img').on('mouseout',function(){
+	$(this).attr('src',v_src);
+});
+
+$('img').on('dblclick',function(){
+	$(this).hide();
+	//모든 대상 사라졌을 때 버튼 보이기
+	if( $('img:visible').length < 1 ) $('input:button').show();
+});
+
+$('input:button').on('click',function(){
+	$('img').show();
+	$(this).hide();
+});
+</script>
+
+</body>
+</html>
