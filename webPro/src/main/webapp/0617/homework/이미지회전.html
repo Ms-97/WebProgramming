@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/outStyle.css">
+<style>
+img {
+  width: 150px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<input type="button" value="start">
+<input type="button" value="end">
+<div>
+	 <img src="../../images/img/img.png" alt=""> <!-- 잘라내서 -->
+    <img src="../../images/img/뚱이웃.png" alt="">
+    <img src="../../images/img/뚱이햄.png" alt="">
+    <img src="../../images/img/homer.png" alt="">
+
+</div>
+<script type="text/javascript">
+let startChecker = false;
+function proxyCall(){
+	if (!startChecker) {
+		ramdom();
+	}
+	startChecker = true; //한번만 실행하게하기
+}
+function callEnd() {
+	//clearTimeout(setTimeout객체)실행
+	clearTimeout(time);
+	startChecker = false;
+}
+function ramdom() {
+	$('img').first().appendTo('div'); 
+	time = setTimeout(ramdom,500); 
+}	
+$('[value="start"]').on('click',proxyCall);
+$('[value="end"]').on('click',callEnd);
+</script>
+</body>
+</html>

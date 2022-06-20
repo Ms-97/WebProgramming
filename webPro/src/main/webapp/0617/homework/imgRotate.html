@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/outStyle.css">
+<style>
+img {
+  width: 100px;
+} 
+</style>
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+  //시작
+  $('button').eq(0).on('click',proxyCall);
+  //정지
+  $('button').eq(1).on('click',callEnd);
+});
+
+let chk = false;
+let timer = "";
+let proxyCall = function(){
+  if(!chk){
+	  appendImg();
+	  chk = true;
+  }  
+};
+
+let callEnd = function(){
+  clearTimeout(timer);
+  chk = false;
+};
+
+let appendImg = function(){
+	$('img').first().appendTo('div');
+	timer = setTimeout(appendImg, 500);
+};
+
+</script>
+</head>
+<body>
+  <button type="button">시작</button>
+  <button type="button">정지</button>
+
+  <div>
+    <<img src="../../images/img/img.png" alt=""> <!-- 잘라내서 -->
+    <img src="../../images/img/뚱이웃.png" alt="">
+    <img src="../../images/img/뚱이햄.png" alt="">
+    <img src="../../images/img/homer.png" alt="">
+  </div>
+  
+</body>
+</html>
