@@ -12,14 +12,16 @@
 	Connection conn = DriverManager.getConnection(url, "KMS97", "java");
 	Statement stmt = conn.createStatement();
 	String sql = "select prod_id, prod_name from prod" +
-					"where prod_lgu = '" + lprodGu + "'";
+					" where prod_lgu = '" + lprodGu + "'";
 	ResultSet rs = stmt.executeQuery(sql);
 	
 	if(rs.next()){	//데이터가 있음
 %>
 		{
-			"code" : "ok",
-			"data" : [{},{},{},{},{},{}]
+			"code" : "ok"
+<%-- 				//while(rs.next()) --%>
+<%-- 				//index로 쉼표 추가 --%>
+<%-- 				"data" : [{},{},{},{},{},{}] --%>
 		}
 <%
 	}else{ 			//데이터가 없음
@@ -28,8 +30,4 @@
 		}
 <%	
 	}//if end
-%>
-
-
-
 %>

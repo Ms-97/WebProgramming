@@ -27,6 +27,7 @@
 
 <script>
 
+/*
 // 제이쿼리로 ajax - lprod 
 $.ajax({
 	url: 'lprod.jsp',	//json obj arr
@@ -45,13 +46,32 @@ $.ajax({
 	dataType: 'json'
 });
 
+*/
+
 //자바스크립트로 ajax - lprod
 //숙제
-
+	let req = new XMLHttpRequest();
+	//요청
+	  req.open('get', 'lprod.jsp');	//json Object array
+	  req.send();
+	  //응답	
+	  req.onreadystatechange=function(){
+		  if(this.readyState == 4 && this.status == 200){
+				let data = JSON.parse(this.responseText);
+				let result = "";
+				for(let i=0; i<data.length; i++){
+				result += `<option value='${data[i].gu}'>${data[i].nm}</option>`;
+				}
+				document.querySelector('#lprod').innerHTML = result;
+		  }
+		 
+	  }
+	  
+	
 // 제이쿼리로 ajax - prod
 $('#lprod').on('change',function(){
 	
-	//console.log( $(this).val() );  //요청정보
+	//console.log( $(this).val() ); //요청정보
 	$.ajax({
 		url : 'prod.jsp',
 		data : {'gu' : $(this).val()},
@@ -61,6 +81,9 @@ $('#lprod').on('change',function(){
 		},
 		dataType: 'json'
 	});
+	
+	
+	
 	
 	
 });
