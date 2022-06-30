@@ -3,8 +3,22 @@
     PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 
-    <sqlMap>
-    
-    
+    <sqlMap namespace="board">
+     
+     <!-- 전체 글갯수 조회 -->
+     <select id="countList" resultClass="int">
+       SELECT COUNT(*) FROM BOARD
+     </select>
+     
+     <select id="boardList" resultClass="boardVO" parameterClass="map">
+     	SELECT A.* FROM(
+      		SELECT ROWNUM AS RNUM, B.* FROM(
+      			SELECT * FROM BOARD
+				ORDER BY NUM DESC)B
+	<![CDATA[
+			WHERE ROWNUM <= #end#)A
+		WHERE A.RNUM >= #start#
+	]]>
+     </select> 
     
     </sqlMap>

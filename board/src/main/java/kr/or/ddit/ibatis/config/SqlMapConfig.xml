@@ -21,6 +21,7 @@
 	형식) <typeAlias alias="alias명" type="클래스의 풀네임"/>
 	 -->
 	 
+	 <typeAlias alias="boardVO" type="kr.or.ddit.board.vo.BoardVO"/>
 	 
 	 
 	<!--
@@ -63,6 +64,8 @@
 	그 xml문서와 아래와 같이 연결하여 사용한다.
 	형식) <sqlMap resource="경로명/파일명.xml"/>
 	-->
+	
+	<sqlMap resource="kr/or/ddit/ibatis/mapping/board.xml"/>
 	
 </sqlMapConfig>
 
